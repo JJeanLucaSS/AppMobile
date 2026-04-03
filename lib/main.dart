@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'pages/servico_page.dart';
 void main() {
 runApp(MyApp());
 }
@@ -26,6 +26,16 @@ class HomePage extends StatelessWidget {
           ListTile(
             title: Text("Ar Condicionado"),
             leading: Icon(Icons.ac_unit),
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => ServicoPage(
+                    nomeServico: "Ar Condicionado",
+                  ),
+                ),
+              );
+            },
           ),
           ListTile(
             title: Text("Pmoc"),
@@ -40,4 +50,18 @@ class HomePage extends StatelessWidget {
       ),
     );
   }
+}
+
+class ServicoPage extends StatefulWidget {
+  @override
+  _ServicoPageState createState() => _ServicoPageState();
+}
+
+class _ServicoPageState extends State<ServicoPage> {
+
+  @override
+  Widget build(BuildContext context) {
+    return Container();
+  }
+
 }
